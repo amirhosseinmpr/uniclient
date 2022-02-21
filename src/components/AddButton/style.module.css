@@ -1,0 +1,31 @@
+.add-btn-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+}
+
+.add-btn-wrapper > div {
+  width: fit-content;
+}
+
+.add-btn-wrapper > div button {
+  border-radius: 50%;
+  background-color: #05b6d4;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 100;
+  line-height: 2rem;
+}
+
+.add-btn-wrapper > div button:hover,
+.add-btn-wrapper > div button:focus {
+  background-color: #00b0d0;
+  color: #fff;
+  box-shadow: none;
+}
+
+.add-btn-wrapper > div button:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
