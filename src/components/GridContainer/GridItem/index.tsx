@@ -7,6 +7,7 @@ import { removeUser } from '../../../redux/actions/user';
 
 import styles from './style.module.css';
 
+//setup grid 
 interface GridItemProps {
   item: string;
 }
@@ -29,6 +30,8 @@ const GridItem = ({ item }: GridItemProps) => {
       <span className={`${styles['grid-item__user']} position-absolute`}>
         User {item}
       </span>
+
+
     </div>
   );
 };
