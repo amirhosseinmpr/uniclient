@@ -7,6 +7,9 @@ import styles from "./style.module.css";
 
 
 
+
+
+
 const AddButton = () => {
   const users = useSelector((state: RootState) => state.userReducer.users);
   const usersCount = useSelector((state: RootState) => state.userReducer.count);
@@ -15,7 +18,7 @@ const AddButton = () => {
   const handleAddUser = () => {
     if (usersCount < 12) {
       let index: number = 1,
-        user: string = "";
+        user: string = '';
       while (!user) {
         const newUser: string = String(index++);
         if (users.indexOf(newUser) === -1) user = newUser;
@@ -25,7 +28,7 @@ const AddButton = () => {
   };
 
   return (
-    <div className={`${styles["add-btn-wrapper"]} w-100`}>
+    <div className={`${styles['add-btn-wrapper']} w-100`}>
       <div className='mx-auto'>
         <button className='btn' onClick={handleAddUser}>
           +
