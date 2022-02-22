@@ -17,6 +17,7 @@ export default function Home() {
       <Head>
         <title>UniClient</title>
         <meta name='description' content='A test application for UniClient' />
+
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -26,7 +27,7 @@ export default function Home() {
         </h1>
 
         <div className='container h-100'>
-          <div className={`${styles["app-grid"]} py-2 py-sm-3 py-md-4 py-lg-5`}>
+          <div className={`${styles['app-grid']} py-2 py-sm-3 py-md-4 py-lg-5`}>
             <GridContainer />
           </div>
         </div>
