@@ -10,9 +10,14 @@
     "lint-fix": "eslint ./ --fix --ext js,jsx,ts,tsx"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@mui/icons-material": "^5.4.2",
+    "@mui/material": "^5.4.3",
+    "@mui/styled-engine-sc": "^5.4.2",
     "@types/react-redux": "^7.1.16",
     "bootstrap": "^5.0.1",
     "next": "11.0.0",
@@ -21,9 +26,11 @@
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/material-ui": "^0.21.12",
     "@types/react": "17.0.11",
     "eslint": "7.28.0",
     "eslint-config-next": "11.0.0",
