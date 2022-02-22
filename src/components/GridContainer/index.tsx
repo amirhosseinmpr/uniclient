@@ -5,19 +5,23 @@ import DragItem from "./DragItem";
 import GridItem from "./GridItem";
 import { RootState } from "../../redux/reducers";
 import { splitArrayIntoChunksOfLen } from "../../utils/array";
+import { setUsersToLocalStorage } from "../../utils/localStorage";
 
 const GridContainer = () => {
   const [colCount, setColCount] = useState<number>(0);
   const [displayItems, setDisplayItems] = useState<Array<Array<string>>>();
   const users = useSelector((state: RootState) => state.userReducer.users);
 
-  // ? Sets colCount, and displayItems whenever
-  //? the 'users' changes
+  // ? Sets colCount, displayItems & store the users
+  // ? to localStorage, whenever the 'users' changes
   useEffect(() => {
     // ? Computes the count of columns
     const colCount = Math.floor(Math.sqrt(users.length + 1));
     setColCount(colCount);
     setDisplayItems(splitArrayIntoChunksOfLen(users, colCount));
+    // ? Sets users to localStorage whenever
+    // ? the 'users' changes
+    setUsersToLocalStorage(users);
   }, [users]);
 
   return (
