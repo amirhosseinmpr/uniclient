@@ -1,3 +1,4 @@
+import { getUsersFromLocalStorage } from "../../utils/localStorage";
 import { ADD_USER, REMOVE_USER, SET_USERS, MOVE_USER } from "../../utils/types";
 import { moveUser } from "./user.helpers";
 
@@ -16,12 +17,19 @@ interface Action {
 }
 
 // ? User reducer's default data
-const initialState: State = {
+let initialState: State = {
   // ? Array of users id
   users: ["1", "2", "3", "4"],
   // ? users count
   count: 4,
 };
+
+// ? Load users from localStorage
+if (typeof window !== "undefined") {
+  const storedUsers = getUsersFromLocalStorage();
+  if (storedUsers)
+    initialState = { users: storedUsers, count: storedUsers.length };
+}
 
 const userReducer = (state: State = initialState, action: Action): State => {
   const payload: any = action?.payload;

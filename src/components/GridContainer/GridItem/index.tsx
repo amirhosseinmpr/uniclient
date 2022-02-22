@@ -1,10 +1,11 @@
-import React, { LegacyRef, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { LegacyRef, useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-import DeleteIcon from '@mui/icons-material/Delete';
-import { removeUser } from '../../../redux/actions/user';
+import { removeUser } from "../../../redux/actions/user";
 
-import styles from './style.module.css';
+import styles from "./style.module.css";
 
 interface GridItemProps {
   item: string;
@@ -25,15 +26,13 @@ const GridItem = ({ item, forwardedRef, style }: GridItemProps) => {
       // ? Set the received ref and style to the element
       ref={forwardedRef}
       style={style}
-      className={`${styles['grid-item']} position-relative`}
-    >
+      className={`${styles["grid-item"]} position-relative`}>
       <button
         onClick={handleRemoveUser}
-        className={`btn ${styles['grid-item__remove-btn']} position-absolute`}
-      >
-        <DeleteIcon />
+        className={`btn ${styles["grid-item__remove-btn"]} position-absolute`}>
+        <Icon icon={faTrashAlt} />
       </button>
-      <span className={`${styles['grid-item__user']} position-absolute`}>
+      <span className={`${styles["grid-item__user"]} position-absolute`}>
         User {item}
       </span>
     </div>
